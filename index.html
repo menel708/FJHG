@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="content">
+        <p>quer namorar cmg?</p>
+
+        <button type="button" id="sim">sim</button>
+        <button type="button" id="nao">não</button>
+
+        <p id="resultado"></p>
+        </div>
+    </div>
+
+
+    <script>
+        const sim = document.getElementById("sim")
+        const nao = document.getElementById("nao")
+        const resultado = document.getElementById("resultado")
+
+        sim.addEventListener('click', () => {
+            resultado.innerText = 'graças a Deus❤️'
+        })
+
+        nao.addEventListener('mouseover', () => {
+            const content = document.querySelector('.content');
+            const maxX = content.offsetWidth - nao.offsetWidth;
+            const maxY = content.offsetHeight - nao.offsetHeight;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            nao.style.position = 'absolute';
+            nao.style.left = `${randomX}px`;
+            nao.style.top = `${randomY}px`;
+        });
+    </script>
+</body>
+</html>
